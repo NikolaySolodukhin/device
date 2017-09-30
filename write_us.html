@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Девайс-Каталог</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="center">
+    <div class="writeus_popup writeus_popup_page">
+      <a href="index.html" class="cross cross_writeus">Закрыть</a>
+      <form action="/echo" method="post" class="writeus">
+        <div class="popup_head clearfix">
+          <fieldset class="popup_name">
+            <label for="name">Ваше имя:</label>
+            <input type="text" placeholder="Представьтесь пожалуйста" name="name" id="name">
+          </fieldset>
+          <fieldset class="popup_email">
+            <label for="e-mail">Ваш e-mail:</label>
+            <input type="text" placeholder="Для отправки ответа" name="e-mail" id="e-mail">
+          </fieldset>
+        </div>
+        <div class="popup_message">
+          <label for="message">Текст письма:</label>
+          <textarea placeholder="В свободной форме" name="message" id="message"></textarea>
+        </div>
+        <button type="submit" class="yellow yellow_popup">Отправить</button>
+      </form>
+    </div>
+  </body>
+</html>
