@@ -1,8 +1,8 @@
 {
-  "name": "sedona",
+  "name": "Device",
   "version": "0.1.0",
   "private": true,
-  "description": "Sedona",
+  "description": "Device",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.x",
     "autoprefixer": "7.1.x",

@@ -1,0 +1,16 @@
+@import "../node_modules/normalize.css/normalize.css";
+@import "global/fonts.css";
+@import "variables.css";
+@import "mixins.css";
+
+/*header*/
+@import "blocks/page.css";
+@import "blocks/container.css";
+
+
+
+
+
+/*footer*/
+
+@import "blocks/footer.css";
