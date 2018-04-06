@@ -24,7 +24,6 @@ var flexbugsFixes = require('postcss-flexbugs-fixes');
 var doiuse = require('doiuse');
 var stylelint = require('gulp-stylelint');
 var htmlhint = require('gulp-htmlhint');
-// var bemLinter = require('postcss-bem-linter');
 var reporter = require('postcss-reporter');
 var eslint = require('gulp-eslint');
 var sourcemaps = require('gulp-sourcemaps');
