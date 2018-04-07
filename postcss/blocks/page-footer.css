@@ -1,0 +1,15 @@
+.page-footer {
+  padding-top: 56px;
+  padding-bottom: 64px;
+  color: white;
+  background-color: var(--bg-color-grey-footer);
+}
+
+
+.page-footer__user-menu {
+  margin-bottom: 26px;
+}
+
+.page-footer__contacts {
+  margin-bottom: 61px;
+}

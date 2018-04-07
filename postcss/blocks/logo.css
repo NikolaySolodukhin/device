@@ -1,0 +1,18 @@
+.logo {
+  font-weight: 900;
+  font-size: 48px;
+  text-transform: uppercase;
+
+  &--gold {
+    color: var(--color-gold);
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

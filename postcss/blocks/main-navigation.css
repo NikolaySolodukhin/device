@@ -1,0 +1,30 @@
+
+.main-navigation__list {
+  display: flex;
+  width: 510px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.main-navigation__link {
+  padding-right: 18px;
+  padding-left: 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3.5px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
