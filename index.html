@@ -19,82 +19,84 @@
 </head>
 
 <body class="page">
-  <header class="header">
-    <a class="logo">Device</a>
-    <div class="header_top">
+  <div class="container">
+    <header class="main-header">
+      <a class="logo">Device</a>
 
-      <form action="/echo" method="get" class="search in_bl">
-        <input class="search_area in_bl" type="search" placeholder="Поиск по сайту" name="search" id="search">
-        <button class="search_btn in_bl" type="button">Найти</button>
-      </form>
+      <div class="main-header__user-block">
 
-      <div class="user_block_header in_bl">
-        <input class="" type="checkbox" id="log_check">
-        <div class="login in_bl">
-          <label class="" for="log_check">Войти</label>
-        </div>
-        <div class="user in_bl">
-          <a class="" href="#">Валентин Петухов</a>
-          <label class="logoff" for="log_check">Выйти</label>
-        </div>
-      </div>
-      <div class="compare in_bl">
-        <a class="" href="#">Сравнить</a>
-      </div>
-      <div class="cart in_bl">
-        <a class="" href="#">Корзина</a>
-      </div>
+        <form class="search-form" action="/echo" method="get">
+          <input class="search-form__input-control" type="search" placeholder="Поиск по сайту" name="search" id="search">
+          <button class="btn search-form__btn" type="submit">Найти</button>
+        </form>
 
-    </div>
-
-    <nav class="header_bottom">
-      <ul class="">
-        <li class="in_bl">
-          <a class="" href="catalog.html">Каталог товаров</a>
-
-          <ul class="in_bl">
-            <li class="">
-              <a class="" href="#">Виртуальная реальность</a>
+        <section class="user-menu user-menu--header">
+          <ul class="user-menu__list user-menu__list--header">
+            <li class="user-menu__item user-menu__item--right">
+              <a class="user-menu__link user-menu__link--black" href="">Войти</a>
+              <svg class="user-menu__svg user-menu__svg--entrance-header" xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewbox="0 0 13 12">
+                <path d="M.032 12h12.937c-.163-2.643-2.074-4.837-4.671-5.543a3.47 3.47 0 0 0 1.687-2.972 3.485 3.485 0 0 0-6.97 0c0 1.264.68 2.361 1.688 2.972C2.106 7.163.194 9.357.032 12z"></path>
+              </svg>
             </li>
-
-            <li class="">
-              <a class="" href="#">Моноподы для селфи</a>
+            <li class="user-menu__item user-menu__item--header">
+              <a class="user-menu__link user-menu__link--black" href="">Сравнить</a>
+              <svg class="user-menu__svg user-menu__svg--compare-header" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewbox="0 0 10 10">
+                <path d="M8 2h1.984v8H8zM0 3h1.984v7H0zM4 0h2v10H4z"></path>
+              </svg>
             </li>
-
-            <li class="">
-              <a class="" href="#">Экшн-камеры</a>
-            </li>
-
-            <li class="">
-              <a class="" href="#">Фитнесс-браслеты</a>
-            </li>
-
-            <li class="">
-              <a class="" href="#">Умные часы</a>
-            </li>
-
-            <li class="">
-              <a class="" href="#">Квадрокоптеры</a>
+            <li class="user-menu__item user-menu__item--header">
+              <a class="user-menu__link user-menu__link--black" href="">Корзина</a>
+              <svg class="user-menu__svg user-menu__svg--cart-header" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12">
+                <path d="M11.864 3.017a.429.429 0 0 0-.327-.154H9.225V4.09c0 .563-.484 1.022-1.08 1.022-.594 0-1.078-.458-1.078-1.022V2.863H4.909V4.09c0 .563-.485 1.022-1.08 1.022-.595 0-1.078-.458-1.078-1.022V2.863H.438a.43.43 0 0 0-.327.154.472.472 0 0 0-.108.358l.776 7.134c.015.806.642 1.455 1.411 1.455h7.595c.77 0 1.396-.649 1.411-1.455l.776-7.134a.476.476 0 0 0-.108-.358z"></path>
+                <path d="M3.829 4.499c.239 0 .433-.184.433-.409V1.84c0-.632.672-1.022 1.295-1.022h1.079c.655 0 1.078.401 1.078 1.022v2.25c0 .225.194.409.431.409.239 0 .433-.184.433-.409V1.84C8.577.773 7.761 0 6.636 0H5.557c-1.19 0-2.159.826-2.159 1.84v2.25c0 .225.194.409.431.409z"></path>
+              </svg>
             </li>
           </ul>
-        </li>
+        </section>
+      </div>
 
-        <li class="in_bl">
-          <a class="" href="#">Доставка</a>
-        </li>
+      <nav class="main-navigation">
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item">
+            <a class="main-navigation__link" href="catalog.html">Каталог товаров</a>
 
-        <li class="in_bl">
-          <a class="" href="#">Гарантия</a>
-        </li>
+            <ul class="main-navigation__catalog">
+              <li class="main-navigation__catalog-item">
+                <a class="main-navigation__catalog-link" href="#">Виртуальная реальность</a>
+                <a class="main-navigation__catalog-link" href="#">Моноподы для селфи</a>
+                <a class="main-navigation__catalog-link" href="#">Экшн-камеры</a>
+              </li>
 
-        <li class="in_bl">
-          <a class="" href="#">Контакты</a>
-        </li>
+              <li class="main-navigation__catalog-item">
+                <a class="main-navigation__catalog-link" href="#">Фитнесс-браслеты</a>
+                <a class="main-navigation__catalog-link" href="#">Умные часы</a>
+              </li>
 
-      </ul>
-    </nav>
+              <li class="main-navigation__catalog-item">
+                <a class="main-navigation__catalog-link" href="#">Квадрокоптеры</a>
+              </li>
 
-  </header>
+              <li class="main-navigation__catalog-item"></li>
+            </ul>
+          </li>
+
+          <li class="main-navigation__item">
+            <a class="main-navigation__link" href="#">Доставка</a>
+          </li>
+
+          <li class="main-navigation__item">
+            <a class="main-navigation__link" href="#">Гарантия</a>
+          </li>
+
+          <li class="main-navigation__item">
+            <a class="main-navigation__link" href="#">Контакты</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </header>
+  </div>
 
 
   <main class="main">
@@ -317,26 +319,26 @@
   <footer class="page-footer">
     <div class="page-footer__wrapper container">
       <div class="page-footer__user-menu">
-        <section class="user-menu">
+        <section class="user-menu user-menu--footer">
           <a class="logo logo--gold">Device</a>
 
-          <ul class="user-menu__list">
-            <li class="user-menu__item">
-              <a class="user-menu__link" href="">Войти</a>
-              <svg class="user-menu__svg user-menu__svg--entrance" xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewbox="0 0 13 12">
+          <ul class="user-menu__list user-menu__list--footer">
+            <li class="user-menu__item user-menu__item--footer">
+              <a class="user-menu__link user-menu__link--footer" href="">Войти</a>
+              <svg class="user-menu__svg user-menu__svg--gold user-menu__svg--entrance-footer" xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewbox="0 0 13 12">
                 <path d="M.032 12h12.937c-.163-2.643-2.074-4.837-4.671-5.543a3.47 3.47 0 0 0 1.687-2.972 3.485 3.485 0 0 0-6.97 0c0 1.264.68 2.361 1.688 2.972C2.106 7.163.194 9.357.032 12z"
                 />
               </svg>
             </li>
-            <li class="user-menu__item">
-              <a class="user-menu__link " href="">Сравнить</a>
-              <svg class="user-menu__svg user-menu__svg--compare" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewbox="0 0 10 10">
+            <li class="user-menu__item user-menu__item--footer">
+              <a class="user-menu__link user-menu__link--footer" href="">Сравнить</a>
+              <svg class="user-menu__svg user-menu__svg--gold user-menu__svg--compare-footer" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewbox="0 0 10 10">
                 <path d="M8 2h1.984v8H8zM0 3h1.984v7H0zM4 0h2v10H4z" />
               </svg>
             </li>
-            <li class="user-menu__item">
-              <a class="user-menu__link" href="">Корзина</a>
-              <svg class="user-menu__svg user-menu__svg--cart" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12">
+            <li class="user-menu__item user-menu__item--footer">
+              <a class="user-menu__link user-menu__link--footer" href="">Корзина</a>
+              <svg class="user-menu__svg user-menu__svg--gold user-menu__svg--cart-footer" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12">
                 <path d="M11.864 3.017a.429.429 0 0 0-.327-.154H9.225V4.09c0 .563-.484 1.022-1.08 1.022-.594 0-1.078-.458-1.078-1.022V2.863H4.909V4.09c0 .563-.485 1.022-1.08 1.022-.595 0-1.078-.458-1.078-1.022V2.863H.438a.43.43 0 0 0-.327.154.472.472 0 0 0-.108.358l.776 7.134c.015.806.642 1.455 1.411 1.455h7.595c.77 0 1.396-.649 1.411-1.455l.776-7.134a.476.476 0 0 0-.108-.358z"
                 />
                 <path d="M3.829 4.499c.239 0 .433-.184.433-.409V1.84c0-.632.672-1.022 1.295-1.022h1.079c.655 0 1.078.401 1.078 1.022v2.25c0 .225.194.409.431.409.239 0 .433-.184.433-.409V1.84C8.577.773 7.761 0 6.636 0H5.557c-1.19 0-2.159.826-2.159 1.84v2.25c0 .225.194.409.431.409z"
@@ -351,15 +353,15 @@
         <section class="contacts">
           <address class="contacts__address">г. Москва, ул. Строителей, 15</address>
           <nav class="main-navigation">
-            <ul class="main-navigation__list">
+            <ul class="main-navigation__list main-navigation__list--footer">
               <li class="main-navigation__item">
-                <a class="main-navigation__link" href="#">Доставка</a>
+                <a class="main-navigation__link main-navigation__link--white main-navigation__link--footer" href="#">Доставка</a>
               </li>
               <li class="main-navigation__item">
-                <a class="main-navigation__link" href="#">Гарантия</a>
+                <a class="main-navigation__link main-navigation__link--white main-navigation__link--footer" href="#">Гарантия</a>
               </li>
               <li class="main-navigation__item">
-                <a class="main-navigation__link" href="#">Контакты</a>
+                <a class="main-navigation__link main-navigation__link--white main-navigation__link--footer" href="#">Контакты</a>
               </li>
             </ul>
           </nav>
