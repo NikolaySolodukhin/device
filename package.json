@@ -1,8 +1,8 @@
 {
-  "name": "sedona",
+  "name": "device",
   "version": "0.1.0",
   "private": true,
-  "description": "Sedona",
+  "description": "Device",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.x",
     "autoprefixer": "7.1.x",
@@ -32,6 +32,8 @@
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
     "htmlhint-stylish": "^1.0.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
     "normalize.css": "^7.0.0",
     "postcss-bem-linter": "^3.0.0",
     "postcss-browser-reporter": "^0.5.0",
@@ -43,6 +45,7 @@
     "webpack": "^3.5.6"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "test": "editorconfig-cli",
     "build": "gulp build",
     "symbols": "gulp symbols",
@@ -50,10 +53,7 @@
     "images": "gulp images",
     "start": "gulp serve",
     "demo": "gulp build && gulp demo",
-    "deploy": "gulp deploy",
-    "lintcss": "gulp lintcss",
-    "linthtml": "gulp linthtml",
-    "lintjs": "gulp lintjs"
+    "deploy": "gulp deploy"
   },
   "editorconfig-cli": [
     "*.html",
@@ -63,10 +63,19 @@
     "img/**/*.svg",
     "postcss/**/*.{css,pcss}"
   ],
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.html": ["htmlhint", "git add"],
+    "*.css": [" stylelint --fix", "git add"],
+    "*.{json,md}": ["prettier --write", "git add"]
+  },
   "engines": {
     "node": "6.10"
   },
   "dependencies": {
-    "del": "^3.0.0"
+    "htmlhint": "^0.9.13",
+    "prettier": "^1.11.1",
+    "stylelint": "^9.2.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
   }
 }

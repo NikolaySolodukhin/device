@@ -1,0 +1,120 @@
+.search-form {
+  position: relative;
+  width: 520px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../img/search.svg");
+  }
+}
+
+
+.search-form__btn {
+  position: relative;
+  width: 85px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: var(--set-opensans-font-family);
+  background-color: transparent;
+  border: 2px solid black;
+  visibility: hidden;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: black;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -430px;
+    width: 430px;
+    height: 2px;
+    background-color: black;
+    visibility: hidden;
+  }
+}
+
+.search-form__input-control {
+  width: 430px;
+  padding-top: 18px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: var(--set-opensans-font-family);
+  color: black;
+  background-color: var(--bg-yellow-header);
+  border: none;
+  outline: none;
+
+  &:focus + .search-form__btn {
+    visibility: visible;
+    transition: 0.3s ease all;
+
+    &::before {
+      visibility: visible;
+      transition-duration: 0.2s;
+      transition-property: width;
+    }
+  }
+
+  &:hover::-webkit-input-placeholder,
+  &:focus::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &:hover::-moz-placeholder,
+  &:focus::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active::-moz-placeholder {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &:hover:-ms-input-placeholder,
+  &:focus:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &::-webkit-input-placeholder {
+    position: relative;
+    top: -5px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &::-moz-placeholder {
+    position: relative;
+    top: -5px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:-ms-input-placeholder {
+    position: relative;
+    top: -5px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}

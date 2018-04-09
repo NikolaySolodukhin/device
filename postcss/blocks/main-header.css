@@ -1,0 +1,10 @@
+.main-header {
+  min-height: 339px;
+  padding: 14px 60px 36px;
+  background-color: var(--bg-yellow-header);
+  box-shadow: 0 40px 0 0 white inset;
+}
+
+.main-header__user-block {
+  display: flex;
+}
