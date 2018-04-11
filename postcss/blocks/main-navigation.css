@@ -13,6 +13,12 @@
 
 .main-navigation__item {
   position: relative;
+
+  &--header {
+    &:first-child {
+      margin-right: auto;
+    }
+  }
 }
 
 .main-navigation__link {
@@ -31,6 +37,10 @@
   &--footer {
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  &--black {
+    color: black;
   }
 
   &:hover,

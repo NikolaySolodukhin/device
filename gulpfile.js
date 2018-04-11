@@ -11,7 +11,6 @@ var svgmin = require('gulp-svgmin');
 var autoprefixer = require('autoprefixer');
 var mqpacker = require('css-mqpacker');
 var csso = require('gulp-csso');
-var gzip = require('gulp-gzip');
 var imagemin = require('gulp-imagemin');
 var htmlmin = require('gulp-html-minifier2');
 var concat = require('gulp-concat');
@@ -29,6 +28,10 @@ var eslint = require('gulp-eslint');
 var sourcemaps = require('gulp-sourcemaps');
 var sorting = require('postcss-sorting');
 var newer = require('gulp-newer');
+var gulpif = require('gulp-if');
+var argv = require('yargs').argv;
+var changed = require('gulp-changed');
+var gulpLoadPlugins = require('gulp-load-plugins');
 
 gulp.task('clean', function() {
   return del('build');
