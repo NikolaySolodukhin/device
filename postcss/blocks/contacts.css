@@ -1,9 +1,0 @@
-.contacts {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contacts__address {
-  font-size: 15px;
-  font-style: normal;
-}
