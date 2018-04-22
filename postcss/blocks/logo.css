@@ -1,7 +1,9 @@
 .logo {
   font-weight: 900;
   font-size: 48px;
+  color: black;
   text-transform: uppercase;
+  text-decoration: none;
 
   &--gold {
     color: var(--color-gold);
@@ -14,5 +16,16 @@
 
   &:active {
     opacity: 0.3;
+  }
+
+  &--no-opacity {
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+    }
   }
 }
