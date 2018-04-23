@@ -10,3 +10,4 @@ Thumbs.db
 *.pdf
 build/
 css/style.css
+.publish

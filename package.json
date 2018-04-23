@@ -6,20 +6,25 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.x",
     "autoprefixer": "8.2.x",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "browser-sync": "2.23.6",
+    "core-js": "^2.5.5",
     "cross-env": "^5.1.4",
     "css-mqpacker": "^6.0.2",
     "del": "^3.0.0",
     "eslint": "4.19.1",
     "eslint-config-htmlacademy": "0.5.x",
     "gulp": "^3.9.1",
+    "gulp-better-rollup": "^3.1.0",
     "gulp-changed": "^3.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
     "gulp-csso": "^3.0.1",
-    "gulp-environments": "^0.1.2",
     "gulp-eslint": "^4.0.2",
-    "gulp-gh-pages": "^0.5.4",
     "gulp-html-minifier2": "^1.1.8",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
@@ -45,8 +50,12 @@
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-reporter": "^5.0.0",
     "postcss-sorting": "^3.1.0",
+    "postcss-url": "^7.3.2",
     "precss": "3.1.2",
     "prettier": "^1.11.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "run-sequence": "^2.2.1",
     "stream-combiner2": "^1.1.1",
     "stylelint": "^9.2.0",
@@ -55,13 +64,13 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "editorconfig-cli",
-    "build": "gulp build",
+    "build": "cross-env NODE_ENV=production gulp build",
     "symbols": "gulp symbols",
     "svg": "gulp svg",
     "images": "gulp images",
-    "start": "gulp server",
-    "demo": "gulp build && gulp demo",
-    "deploy": "gulp deploy"
+    "start": "cross-env NODE_ENV=development gulp dev",
+    "demo": "cross-env NODE_ENV=production gulp build && gulp demo",
+    "deploy": "cross-env NODE_ENV=production gulp build && gulp deploy"
   },
   "editorconfig-cli": [
     "*.html",
@@ -74,10 +83,10 @@
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
     "*.html": ["htmlhint", "git add"],
-    "*.css": [" stylelint --fix", "git add"],
+    "*.css": ["stylelint --fix", "git add"],
     "*.{json,md}": ["prettier --write", "git add"]
   },
-  "engines": {
-    "node": "6.10"
+  "dependencies": {
+    "gulp-gh-pages-will": "^0.5.5"
   }
 }
