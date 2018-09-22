@@ -1,0 +1,119 @@
+.search {
+  width: 440px;
+  margin-right: auto;
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+}
+
+.search__form::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search__input {
+  width: 355px;
+  padding: 10px 40px 9px;
+  letter-spacing: 0.15px;
+  background-color: #f7e296;
+}
+
+.search__input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search__input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search__input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search__input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search__input:hover::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search__input:hover:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search__input:hover::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search__input:hover::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search__input:focus::-webkit-input-placeholder {
+  color: black;
+}
+
+.search__input:focus:-ms-input-placeholder {
+  color: black;
+}
+
+.search__input:focus::-ms-input-placeholder {
+  color: black;
+}
+
+.search__input:focus::placeholder {
+  color: black;
+}
+
+.search__button {
+  width: 85px;
+  min-height: 49px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: var(--set-opensans-font-family);
+  text-transform: none;
+  letter-spacing: 0.15px;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px black;
+  visibility: hidden;
+}
+
+.search__button:hover,
+.search__button:focus {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.search__form:focus-within .search__input,
+.search__input:focus {
+  box-shadow: inset 0 -2px 0 0 black;
+}
+
+.search__input:focus {
+  box-shadow: inset 0 -2px 0 0 black;
+}
+
+.search__form:focus-within .search__button,
+.search__input:focus + .search__button {
+  visibility: visible;
+}
+
+.search__input:focus + .search__button {
+  visibility: visible;
+}
+
+.search__button:active {
+  color: rgba(255, 255, 255, 0.3);
+}

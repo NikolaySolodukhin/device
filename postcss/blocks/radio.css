@@ -1,0 +1,38 @@
+.radio__label {
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.14px;
+}
+
+.radio__label--filter {
+  position: relative;
+  padding-left: 37px;
+}
+
+.radio__label:hover::before,
+.radio__label:focus::before {
+  opacity: 0.6;
+}
+
+.radio__label:active::before {
+  opacity: 1;
+}
+
+.radio__label--filter::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.radio__input--filter:not(:checked) + .radio__label--filter::before {
+  background-image: url("../img/radio-off.svg");
+}
+
+.radio__input--filter:checked + .radio__label--filter::before {
+  background-image: url("../img/radio-on.svg");
+}

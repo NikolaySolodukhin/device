@@ -1,0 +1,50 @@
+
+.range-controls {
+  position: relative;
+}
+
+.range-controls__scale {
+  height: 2px;
+  background-color: #dbdbdb;
+}
+
+.range-controls__bar {
+  width: 60%;
+  height: inherit;
+  background-color: #91c92f;
+}
+
+.range-controls__toggle {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #dadada;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.range-controls__toggle:active {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.range-controls__toggle::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #ababab;
+  border-radius: 50%;
+}
+
+.range-controls__toggle--min {
+  left: -5px;
+}
+
+.range-controls__toggle--max {
+  left: 54%;
+}

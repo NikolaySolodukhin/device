@@ -19,17 +19,22 @@ var plugins = require('gulp-load-plugins')({
   ],
 });
 
-var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+var isDevelopment =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-gulp.task('clean', function () {
+gulp.task('clean', function() {
   return plugins.del('build');
 });
 
-gulp.task('clean:css', function () {
+gulp.task('clean:css', function() {
   return plugins.del('build/css/style.css');
 });
 
-gulp.task('style', function () {
+gulp.task('clean:js', function() {
+  return plugins.del('build/js/main.js');
+});
+
+gulp.task('style', function() {
   return gulp
     .src('postcss/style.css')
     .pipe(plugins.changed('build/css'))
@@ -38,7 +43,10 @@ gulp.task('style', function () {
     .pipe(plugins.if(isDevelopment, plugins.sourcemaps.identityMap()))
     .pipe(
       plugins.postcss([
-        plugins.precss(),
+        plugins.postcssImport(),
+        plugins.postcssPresetEnv({
+          stage: 0,
+        }),
         plugins.cssMqpacker({
           sort: true,
         }),
@@ -46,7 +54,8 @@ gulp.task('style', function () {
         plugins.postcssFlexbugsFixes(),
         plugins.postcssSorting(),
       ]),
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.postcss(
           plugins.postcssUrl({
             url: 'rebase',
@@ -56,7 +65,8 @@ gulp.task('style', function () {
     )
     .pipe(plugins.if(isDevelopment, plugins.sourcemaps.write()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.csso({
           restructure: true,
           forceMediaMerge: true,
@@ -67,7 +77,8 @@ gulp.task('style', function () {
     )
     .pipe(plugins.if(!isDevelopment, plugins.rev()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.revReplace({
           manifest: gulp.src('build/manifest/manifest.json'),
         })
@@ -76,7 +87,8 @@ gulp.task('style', function () {
     .pipe(gulp.dest('build/css'))
     .pipe(plugins.if(isDevelopment, plugins.plumber.stop()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.rev.manifest('build/manifest/manifest.json', {
           base: 'build/manifest',
           merge: true,
@@ -87,20 +99,21 @@ gulp.task('style', function () {
     .pipe(plugins.if(isDevelopment, plugins.browserSync.stream()));
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
   return gulp
     .src('js/main.js')
     .pipe(plugins.plumber())
     .pipe(plugins.if(isDevelopment, plugins.sourcemaps.init()))
     .pipe(
-      plugins.betterRollup({
+      plugins.betterRollup(
+        {
           plugins: [
             plugins.rollupPluginNodeResolve({
               browser: true,
             }),
             plugins.rollupPluginCommonjs(),
             plugins.rollupPluginBabel({
-              babelrc: false,
+              babelrc: true,
               exclude: 'node_modules/**',
               presets: [
                 [
@@ -122,7 +135,8 @@ gulp.task('scripts', function () {
     .pipe(plugins.if(!isDevelopment, plugins.rev()))
     .pipe(gulp.dest('build/js'))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.rev.manifest('build/manifest/manifest.json', {
           base: 'build/manifest',
           merge: true,
@@ -132,7 +146,7 @@ gulp.task('scripts', function () {
     .pipe(plugins.if(!isDevelopment, gulp.dest('build/manifest')));
 });
 
-gulp.task('symbols', function () {
+gulp.task('symbols', function() {
   return gulp
     .src('img/icons/*.svg')
     .pipe(plugins.if(!isDevelopment, plugins.newer('build/img')))
@@ -147,7 +161,7 @@ gulp.task('symbols', function () {
     .pipe(plugins.if(isDevelopment, gulp.dest('img/'), gulp.dest('build/img')));
 });
 
-gulp.task('images', function () {
+gulp.task('images', function() {
   return gulp
     .src('img/*.{png,jpg,gif}')
     .pipe(plugins.newer('img'))
@@ -164,7 +178,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('img'));
 });
 
-gulp.task('htmlminify', function () {
+gulp.task('htmlminify', function() {
   return gulp
     .src('*.html')
     .pipe(plugins.changed('build/*.html'))
@@ -173,17 +187,17 @@ gulp.task('htmlminify', function () {
         collapseWhitespace: true,
       })
     )
-    .pipe(gulp.dest('build/'))
+    .pipe(gulp.dest('build/'));
 });
 
-gulp.task('svg', function () {
+gulp.task('svg', function() {
   return gulp
     .src('img/**/*.svg')
     .pipe(plugins.svgmin())
     .pipe(gulp.dest('img/'));
 });
 
-gulp.task('copy', function () {
+gulp.task('copy', function() {
   return gulp
     .src(['fonts/*.{woff,woff2}', 'img/*.{svg,png,jpg,gif}'], {
       base: '.',
@@ -194,19 +208,19 @@ gulp.task('copy', function () {
     .pipe(plugins.if(!isDevelopment, gulp.dest('build/manifest')));
 });
 
-gulp.task('html:copy', function () {
+gulp.task('html:copy', function() {
   return gulp
     .src('*.html')
     .pipe(plugins.changed('*.html'))
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('html:update', ['html:copy'], function (done) {
+gulp.task('html:update', ['html:copy'], function(done) {
   plugins.browserSync.reload();
   done();
 });
 
-gulp.task('server', ['style'], function (fn) {
+gulp.task('server', ['style'], function(fn) {
   plugins.browserSync.init({
     server: './build',
     notify: false,
@@ -215,18 +229,22 @@ gulp.task('server', ['style'], function (fn) {
     ui: false,
   });
 
-  gulp.watch('postcss/**/*.css', function () {
+  gulp.watch('postcss/**/*.css', function() {
     plugins.runSequence('clean:css', ['style']);
+  });
+
+  gulp.watch('js/**/*.js', function() {
+    plugins.runSequence('clean:js', ['scripts']);
   });
 
   gulp.watch('*.html', ['html:update']);
 });
 
-gulp.task('build', function (fn) {
+gulp.task('build', function(fn) {
   plugins.runSequence('clean', 'copy', ['style', 'scripts'], 'htmlminify', fn);
 });
 
-gulp.task('demo', function () {
+gulp.task('demo', function() {
   plugins.browserSync.init({
     server: './build',
     notify: false,
@@ -236,11 +254,11 @@ gulp.task('demo', function () {
   });
 });
 
-gulp.task('deploy', function () {
+gulp.task('deploy', function() {
   return gulp.src('./build/**/*').pipe(plugins.ghPagesWill());
 });
 
-gulp.task('dev', function (fn) {
+gulp.task('dev', function(fn) {
   plugins.runSequence(
     'clean',
     'copy',

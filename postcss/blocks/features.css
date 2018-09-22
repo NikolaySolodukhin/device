@@ -1,0 +1,63 @@
+.features {
+  flex-grow: 1;
+}
+
+.features__list {
+  padding: 73px 0 146px 119px;
+}
+
+.features__item {
+  position: relative;
+  display: none;
+}
+
+.features__item--delivery::after,
+.features__item--warranty::after,
+.features__item--credit::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.features__item--delivery::after {
+  top: 12px;
+  right: 66px;
+  width: 136px;
+  height: 164px;
+  background-image: url("../img/delivery.svg");
+}
+
+.features__item--warranty::after {
+  top: -11px;
+  right: 46px;
+  width: 171px;
+  height: 194px;
+  background-image: url("../img/warranty.svg");
+}
+
+.features__item--credit::after {
+  top: -11px;
+  right: 70px;
+  width: 156px;
+  height: 186px;
+  background-image: url("../img/credit.svg");
+}
+
+.features__title {
+  margin: 0;
+  margin-bottom: 31px;
+  margin-left: 2px;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 48px;
+  font-family: var(--set-gilroy-font-family);
+  letter-spacing: 0.47px;
+}
+
+.features__text {
+  max-width: 460px;
+  margin: 0;
+  color: var(--bg-color-grey);
+  letter-spacing: 0.3px;
+}

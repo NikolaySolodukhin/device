@@ -1,31 +1,24 @@
 .logo {
-  font-weight: 900;
+  font-weight: 800;
   font-size: 48px;
+  line-height: 48px;
+  font-family: var(--set-gilroy-font-family);
   color: black;
   text-transform: uppercase;
-  text-decoration: none;
+  letter-spacing: 0.48px;
 
-  &--gold {
-    color: var(--color-gold);
+  &:hover {
+    color: black;
+    cursor: default;
   }
+}
 
-  &:hover,
-  &:focus {
-    opacity: 0.6;
-  }
+.logo[href]:hover,
+.logo[href]:focus {
+  cursor: pointer;
+  opacity: 0.6;
+}
 
-  &:active {
-    opacity: 0.3;
-  }
-
-  &--no-opacity {
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-
-    &:active {
-      opacity: 1;
-    }
-  }
+.logo[href]:active {
+  opacity: 0.3;
 }

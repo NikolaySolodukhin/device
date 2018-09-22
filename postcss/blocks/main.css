@@ -1,0 +1,10 @@
+.main__products {
+  position: relative;
+  display: flex;
+}
+
+.main__contacts {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 82px;
+}

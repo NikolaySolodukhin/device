@@ -1,0 +1,77 @@
+.nav-user {
+  display: flex;
+  width: 287px;
+}
+
+.nav-user__login {
+  margin-right: 22px;
+}
+
+.nav-user__logout {
+  margin-right: 20px;
+}
+
+.nav-user__link--login {
+  display: flex;
+  align-items: center;
+}
+
+.nav-user__link--logout {
+  opacity: 0.3;
+}
+
+.nav-user__link--login::before {
+  content: "";
+  width: 13px;
+  height: 12px;
+  margin-right: 12px;
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav-user__link--footer-login {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-user__link--footer-login:hover,
+.nav-user__link--footer-login:focus {
+  color: white;
+}
+
+.nav-user__link--footer-login:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-user__link--footer-login::before {
+  background-image: url("../img/footer-user.svg");
+}
+
+.nav-user__link--login:hover::before,
+.nav-user__link--login:focus::before {
+  opacity: 0.6;
+}
+
+.nav-user__link--login:active::before {
+  opacity: 0.3;
+}
+
+.nav-user--footer {
+  width: auto;
+  margin-right: 23px;
+  margin-bottom: 13px;
+  margin-left: auto;
+}
+
+.nav-user__link--footer {
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-user__link--footer:hover {
+  color: white;
+}
+
+.nav-user__link--footer:focus {
+  color: rgba(255, 255, 255, 0.3);
+}

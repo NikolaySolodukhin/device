@@ -1,0 +1,61 @@
+.filter {
+  position: relative;
+  flex-shrink: 0;
+  width: 328px;
+  padding-right: 68px;
+  padding-left: 60px;
+  background-color: #efefef;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100vw;
+    height: 100%;
+    background-color: #efefef;
+  }
+}
+
+.filter__name {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  margin: 0;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--set-gilroy-font-family);
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}
+
+.filter__form {
+  margin-top: 69px;
+}
+
+.filter__legend {
+  width: 100%;
+  padding-top: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--set-gilroy-font-family);
+  letter-spacing: 0.18px;
+  border-top: 2px solid black;
+}
+
+.filter__price {
+  margin-top: 35px;
+  margin-bottom: 32px;
+}
+
+.filter__list {
+  margin-top: 17px;
+  margin-bottom: 32px;
+}
+
+.filter__button {
+  width: 100%;
+  letter-spacing: 3.6px;
+}

@@ -1,0 +1,21 @@
+.copyright {
+  margin: 0;
+}
+
+.copyright__link {
+  display: flex;
+  width: 28px;
+  height: 35px;
+  background-image: url("../img/logo-html.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

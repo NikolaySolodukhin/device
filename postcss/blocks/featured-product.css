@@ -1,0 +1,79 @@
+.featured-product__title {
+  margin-top: 0;
+  margin-bottom: 19px;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 56px;
+  font-family: var(--set-gilroy-font-family);
+  letter-spacing: 0.47px;
+  word-spacing: -1px;
+}
+
+.featured-product__description {
+  margin-top: 0;
+  margin-bottom: 43px;
+  color: var(--bg-color-grey);
+  letter-spacing: 0.15px;
+}
+
+.featured-product__link {
+  width: 220px;
+  letter-spacing: 3.6px;
+}
+
+.featured-product__characteristics {
+  margin-top: 50px;
+  border-collapse: collapse;
+}
+
+.featured-product__img--self-stick {
+  transform: translateX(40px);
+}
+
+.featured-product__img--fitness-bracelet {
+  transform: translate(65px, 12px);
+}
+
+.featured-product__img--quadrupter {
+  transform: translate(-18px, 65px);
+}
+
+.featured-product__info {
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  padding-top: 79px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 37px;
+    width: 100px;
+    height: 7px;
+    background-color: white;
+  }
+
+  &::after {
+    position: absolute;
+    top: -15px;
+    right: -12px;
+    z-index: -1;
+    font-weight: bold;
+    font-size: 179px;
+    line-height: 179px;
+    font-family: var(--set-gilroy-font-family);
+    color: white;
+  }
+}
+
+.featured-product__info--self-stick::after {
+  content: "01";
+}
+
+.featured-product__info--fitness-bracelet::after {
+  content: "02";
+}
+
+.featured-product__info--quadrupter::after {
+  content: "03";
+}

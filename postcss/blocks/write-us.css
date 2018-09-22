@@ -1,0 +1,25 @@
+.write-us {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: none;
+  width: 960px;
+  min-height: 553px;
+  padding: 93px 100px 80px;
+  background-color: white;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.write-us__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.write-us__button {
+  width: 200px;
+  margin-top: 8px;
+  letter-spacing: 3.6px;
+}
