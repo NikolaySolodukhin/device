@@ -11,7 +11,7 @@
 .range-controls__bar {
   width: 60%;
   height: inherit;
-  background-color: #91c92f;
+  background-color: var(--bg-color-green);
 }
 
 .range-controls__toggle {

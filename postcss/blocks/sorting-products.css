@@ -17,11 +17,11 @@
 .sorting-products__link {
   font-size: 14px;
   line-height: 18px;
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 
   &:hover,
   &:focus {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--color-black-hover);
   }
 }
 

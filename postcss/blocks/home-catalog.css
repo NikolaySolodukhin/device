@@ -15,7 +15,7 @@
   width: 160px;
   height: 160px;
   margin-bottom: 34px;
-  background-color: #f7e296;
+  background-color: var(--bg-yellow-light);
 }
 
 .home-catalog__img--monopods-for-selfie {
@@ -46,7 +46,7 @@
 
 .home-catalog__link:hover .home-catalog__wrapper,
 .home-catalog__link:focus .home-catalog__wrapper {
-  background-color: #f0c52e;
+  background-color: var(--color-gold-light);
 }
 
 .home-catalog__link:hover .home-catalog__name,

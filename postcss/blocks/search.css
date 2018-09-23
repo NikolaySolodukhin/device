@@ -24,39 +24,39 @@
   width: 355px;
   padding: 10px 40px 9px;
   letter-spacing: 0.15px;
-  background-color: #f7e296;
+  background-color: var(--bg-yellow-light);
 }
 
 .search__input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 }
 
 .search__input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 }
 
 .search__input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 }
 
 .search__input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 }
 
 .search__input:hover::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-black-hover);
 }
 
 .search__input:hover:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-black-hover);
 }
 
 .search__input:hover::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-black-hover);
 }
 
 .search__input:hover::placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-black-hover);
 }
 
 .search__input:focus::-webkit-input-placeholder {

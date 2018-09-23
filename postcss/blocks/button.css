@@ -29,7 +29,7 @@
     width: inherit;
     height: 8px;
     color: black;
-    background-color: #f0c52e;
+    background-color: var(--color-gold-light);
     transform: translateY(-50%);
     transition: height 0.2s ease;
   }
@@ -51,7 +51,7 @@
   z-index: 3;
   width: 55px;
   height: 55px;
-  background-color: #f0c52e;
+  background-color: var(--color-gold-light);
   border-radius: 50%;
   opacity: 0.5;
 

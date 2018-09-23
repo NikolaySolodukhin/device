@@ -62,5 +62,5 @@
 .form-field__input:focus,
 .form-field__textarea:focus {
   background-color: white;
-  outline: 3px solid #f7e296;
+  outline: 3px solid var(--bg-yellow-light);
 }

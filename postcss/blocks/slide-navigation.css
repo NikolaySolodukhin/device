@@ -14,9 +14,7 @@
   display: flex;
 }
 
-.slide-navigation__control--self-stick:checked + .slide-navigation__label--self-stick::before,
-.slide-navigation__control--fitness-bracelet:checked + .slide-navigation__label--fitness-bracelet::before,
-.slide-navigation__control--quadrupter:checked + .slide-navigation__label--quadrupter::before {
+.slide-navigation__label--active::before {
   content: "";
   position: absolute;
   top: 50%;

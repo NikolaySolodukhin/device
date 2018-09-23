@@ -3,5 +3,10 @@
   --set-opensans-font-family: "opensans", "Arial", sans-serif;
   --bg-color-grey: #464646;
   --color-gold: #ffc600;
-  --bg-yellow: #f7e296;
+  --color-gold-light: #f0c52e;
+  --bg-yellow-light: #f7e296;
+  --color-black-hover: rgba(0, 0, 0, 0.6);
+  --bg-color-green: #91c92f;
+  --bg-color-white-with-gray: #efefef;
+  --color-black-light: rgba(0, 0, 0, 0.3);
 }

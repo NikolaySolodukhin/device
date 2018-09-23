@@ -3,7 +3,6 @@
 @import "global/fonts";
 @import "global/link";
 @import "variables";
-@import "mixins";
 
 /*header*/
 @import "blocks/page";

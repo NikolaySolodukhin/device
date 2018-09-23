@@ -5,9 +5,9 @@ a {
 
 a:hover,
 a:focus {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-black-hover);
 }
 
 a:active {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-black-light);
 }
