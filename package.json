@@ -52,6 +52,7 @@
     "normalize.css": "^8.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-import": "^12.0.0",
+    "postcss-nested": "^4.1.0",
     "postcss-preset-env": "^6.0.3",
     "postcss-sorting": "^4.0.0",
     "postcss-url": "^8.0.0",
@@ -71,6 +72,7 @@
     "symbols": "gulp symbols",
     "svg": "gulp svg",
     "images": "gulp images",
+    "webp": "gulp webp",
     "start": "cross-env NODE_ENV=development gulp dev",
     "demo": "cross-env NODE_ENV=production gulp build && gulp demo",
     "deploy": "cross-env NODE_ENV=production gulp build && gulp deploy"

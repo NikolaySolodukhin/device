@@ -36,7 +36,8 @@ class Slider {
 
     this.sliderList.addEventListener('keydown', evt => {
       let targetClasslistValue = evt.target.classList.value;
-      if (this.obj[targetClasslistValue] && keyCode.ENTER) {
+      const isEnterPressed = evt.keyCode === keyCode.ENTER;
+      if (this.obj[targetClasslistValue] && isEnterPressed) {
         this.removeActiveClass();
         this.obj[targetClasslistValue].classList.add('slider__item--active');
       }

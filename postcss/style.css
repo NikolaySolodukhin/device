@@ -61,6 +61,6 @@
 @import "blocks/social";
 @import "blocks/copyright";
 @import "blocks/map";
-@import "blocks/modal";
 @import "blocks/write-us";
+@import "blocks/modal";
 @import "blocks/form-field";

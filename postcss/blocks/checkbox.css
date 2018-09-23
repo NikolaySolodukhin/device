@@ -23,14 +23,12 @@
   position: absolute;
   top: -1px;
   left: -1px;
-  width: 27px;
+  width: 23px;
   height: 23px;
   background-repeat: no-repeat;
   background-position: left center;
-}
-
-.checkbox__input--filter:not(:checked) + .checkbox__label--filter::before {
-  background-image: url("../img/checkbox-off.svg");
+  border: 2px solid black;
+  border-radius: 3px;
 }
 
 .checkbox__input--filter:checked + .checkbox__label--filter::before {

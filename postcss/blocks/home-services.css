@@ -14,7 +14,7 @@
   transition: background-color 0.5s;
 }
 
-.home-services__control-s-delivery:checked ~ .tabs .tabs__button--delivery,
+.home-services__control--delivery:checked ~ .tabs .tabs__button--delivery,
 .home-services__control--warranty:checked ~ .tabs .tabs__button--warranty,
 .home-services__control--credit:checked ~ .tabs .tabs__button--credit {
   color: #f7e184;

@@ -21,16 +21,18 @@
   margin-right: 19px;
 }
 
-.sorting-priority__link--increase::before {
+.sorting-priority__link--increase::before,
+.sorting-priority__link--decrease::before {
   border-right: 6px solid transparent;
-  border-bottom: 10px solid #d3d2d2;
   border-left: 6px solid transparent;
+}
+
+.sorting-priority__link--increase::before {
+  border-bottom: 10px solid #d3d2d2;
 }
 
 .sorting-priority__link--decrease::before {
   border-top: 10px solid #d3d2d2;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
 }
 
 .sorting-priority__link--increase:hover::before,

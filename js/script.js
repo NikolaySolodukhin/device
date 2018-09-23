@@ -46,7 +46,6 @@ formWriteUs.addEventListener('submit', event => {
   if (!nameUser.value || !emailUser.value || !messageUser.value) {
     supportPreventDefault(event);
     popupWriteUs.classList.remove('modal--error');
-    popupWriteUs.offsetWidth = popupWriteUs.offsetWidth;
     popupWriteUs.classList.add('modal--error');
   } else if (isStorageSupport) {
     localStorage.setItem('nameUser', nameUser.value);
