@@ -9,6 +9,10 @@
 .features__item {
   position: relative;
   display: none;
+
+  &--active {
+    display: block;
+  }
 }
 
 .features__item--delivery::after,

@@ -27,9 +27,15 @@
   font-family: var(--set-gilroy-font-family);
   text-transform: uppercase;
   letter-spacing: 3.6px;
+
+  &--active {
+    background-color: black;
+    transition: background-color 0.5s;
+  }
 }
 
 .tabs__button {
   width: 160px;
   padding: 8px 24px;
+  text-align: center;
 }

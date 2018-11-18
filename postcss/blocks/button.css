@@ -89,3 +89,16 @@
   margin-bottom: 6px;
   letter-spacing: 3.6px;
 }
+
+.button--active {
+  color: var(--color-gold-tabs);
+
+  &:hover,
+  &:focus {
+    color: var(--color-gold-tabs);
+  }
+
+  &::before {
+    content: none;
+  }
+}
