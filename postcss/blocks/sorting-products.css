@@ -1,0 +1,43 @@
+.sorting-products {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  margin-bottom: 69px;
+}
+
+.sorting-products__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sorting-products__item {
+  margin-right: 32px;
+}
+
+.sorting-products__link {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-black-light);
+
+  &:hover,
+  &:focus {
+    color: var(--color-black-hover);
+  }
+}
+
+.sorting-products__link:active,
+.sorting-products__item--active .sorting-products__link {
+  color: black;
+}
+
+.sorting-products__name {
+  margin: 0;
+  margin-right: 56px;
+  margin-left: 2px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--set-gilroy-font-family);
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}

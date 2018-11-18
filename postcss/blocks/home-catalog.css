@@ -1,0 +1,69 @@
+.home-catalog__list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 81px;
+}
+
+.home-catalog__item {
+  width: 160px;
+}
+
+.home-catalog__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 34px;
+  background-color: var(--bg-yellow-light);
+}
+
+.home-catalog__img--monopods-for-selfie {
+  margin-top: auto;
+  margin-bottom: 1px;
+  margin-left: 2px;
+}
+
+.home-catalog__img--action-cameras {
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
+.home-catalog__img--fitness-bracelet {
+  margin-top: 7px;
+  margin-left: 3px;
+}
+
+.home-catalog__img--smart-watch {
+  margin-top: 3px;
+  margin-left: 6px;
+}
+
+.home-catalog__img--quadrocopter {
+  margin-top: 8px;
+  margin-right: 2px;
+}
+
+.home-catalog__link:hover .home-catalog__wrapper,
+.home-catalog__link:focus .home-catalog__wrapper {
+  background-color: var(--color-gold-light);
+}
+
+.home-catalog__link:hover .home-catalog__name,
+.home-catalog__link:focus .home-catalog__name {
+  color: black;
+}
+
+.home-catalog__link:active .home-catalog__img,
+.home-catalog__link:active .home-catalog__name {
+  opacity: 0.3;
+}
+
+.home-catalog__name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--set-gilroy-font-family);
+  letter-spacing: 0.18px;
+}

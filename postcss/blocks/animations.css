@@ -1,0 +1,39 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(-50%, -200%);
+  }
+
+  70% {
+    transform: translateY(-50%, -100%);
+  }
+
+  90% {
+    transform: translateY(-50%, -25%);
+  }
+
+  100% {
+    transform: translateY(-50%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-51%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-49%, -52%);
+  }
+}

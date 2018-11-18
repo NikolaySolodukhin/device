@@ -1,0 +1,66 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 360px;
+  margin-bottom: 33px;
+}
+
+.form-field--full-width {
+  width: 100%;
+}
+
+.form-field__label {
+  margin-bottom: 7px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--set-gilroy-font-family);
+}
+
+.form-field__input,
+.form-field__textarea {
+  width: 100%;
+  padding: 16px 21px 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--bg-color-grey);
+  background-color: #f2f2f2;
+}
+
+.form-field__textarea {
+  height: 156px;
+  resize: none;
+}
+
+.form-field__input::-webkit-input-placeholder,
+.form-field__textarea::-webkit-input-placeholder {
+  color: rgba(70, 70, 70, 0.4);
+}
+
+.form-field__input:-ms-input-placeholder,
+.form-field__textarea:-ms-input-placeholder {
+  color: rgba(70, 70, 70, 0.4);
+}
+
+.form-field__input::-ms-input-placeholder,
+.form-field__textarea::-ms-input-placeholder {
+  color: rgba(70, 70, 70, 0.4);
+}
+
+.form-field__input::placeholder,
+.form-field__textarea::placeholder {
+  color: rgba(70, 70, 70, 0.4);
+}
+
+.form-field__input:hover,
+.form-field__textarea:hover {
+  background-color: #eaeaea;
+}
+
+.form-field__input:focus,
+.form-field__textarea:focus {
+  background-color: white;
+  outline: 3px solid var(--bg-yellow-light);
+}

@@ -29,6 +29,22 @@ gulp.task('clean:css', function () {
   return plugins.del('build/css/style.css');
 });
 
+gulp.task('clean:js', function () {
+  return plugins.del('build/js/main.js');
+});
+
+
+gulp.task('webp', function () {
+  return gulp
+    .src('img/**/*.{png,jpg}')
+    .pipe(
+      plugins.webp({
+        quality: 90,
+      })
+    )
+    .pipe(gulp.dest('img/'));
+});
+
 gulp.task('style', function () {
   return gulp
     .src('postcss/style.css')
@@ -38,7 +54,11 @@ gulp.task('style', function () {
     .pipe(plugins.if(isDevelopment, plugins.sourcemaps.identityMap()))
     .pipe(
       plugins.postcss([
-        plugins.precss(),
+        plugins.postcssImport(),
+        plugins.postcssNested(),
+        plugins.postcssPresetEnv({
+          stage: 0,
+        }),
         plugins.cssMqpacker({
           sort: true,
         }),
@@ -46,7 +66,8 @@ gulp.task('style', function () {
         plugins.postcssFlexbugsFixes(),
         plugins.postcssSorting(),
       ]),
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.postcss(
           plugins.postcssUrl({
             url: 'rebase',
@@ -56,7 +77,8 @@ gulp.task('style', function () {
     )
     .pipe(plugins.if(isDevelopment, plugins.sourcemaps.write()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.csso({
           restructure: true,
           forceMediaMerge: true,
@@ -67,7 +89,8 @@ gulp.task('style', function () {
     )
     .pipe(plugins.if(!isDevelopment, plugins.rev()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.revReplace({
           manifest: gulp.src('build/manifest/manifest.json'),
         })
@@ -76,7 +99,8 @@ gulp.task('style', function () {
     .pipe(gulp.dest('build/css'))
     .pipe(plugins.if(isDevelopment, plugins.plumber.stop()))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.rev.manifest('build/manifest/manifest.json', {
           base: 'build/manifest',
           merge: true,
@@ -100,7 +124,7 @@ gulp.task('scripts', function () {
             }),
             plugins.rollupPluginCommonjs(),
             plugins.rollupPluginBabel({
-              babelrc: false,
+              babelrc: true,
               exclude: 'node_modules/**',
               presets: [
                 [
@@ -122,7 +146,8 @@ gulp.task('scripts', function () {
     .pipe(plugins.if(!isDevelopment, plugins.rev()))
     .pipe(gulp.dest('build/js'))
     .pipe(
-      plugins.if(!isDevelopment,
+      plugins.if(
+        !isDevelopment,
         plugins.rev.manifest('build/manifest/manifest.json', {
           base: 'build/manifest',
           merge: true,
@@ -149,7 +174,7 @@ gulp.task('symbols', function () {
 
 gulp.task('images', function () {
   return gulp
-    .src('img/*.{png,jpg,gif}')
+    .src('img/*.{png,jpg,gif,webp}')
     .pipe(plugins.newer('img'))
     .pipe(
       plugins.imagemin([
@@ -173,7 +198,7 @@ gulp.task('htmlminify', function () {
         collapseWhitespace: true,
       })
     )
-    .pipe(gulp.dest('build/'))
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('svg', function () {
@@ -185,7 +210,7 @@ gulp.task('svg', function () {
 
 gulp.task('copy', function () {
   return gulp
-    .src(['fonts/*.{woff,woff2}', 'img/*.{svg,png,jpg,gif}'], {
+    .src(['fonts/*.{woff,woff2}', 'img/*.{svg,png,jpg,gif,webp}'], {
       base: '.',
     })
     .pipe(plugins.if(!isDevelopment, plugins.rev()))
@@ -217,6 +242,10 @@ gulp.task('server', ['style'], function (fn) {
 
   gulp.watch('postcss/**/*.css', function () {
     plugins.runSequence('clean:css', ['style']);
+  });
+
+  gulp.watch('js/**/*.js', function () {
+    plugins.runSequence('clean:js', ['scripts']);
   });
 
   gulp.watch('*.html', ['html:update']);

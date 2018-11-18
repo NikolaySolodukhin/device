@@ -1,0 +1,27 @@
+.price-controls {
+  display: flex;
+  margin-top: 5px;
+}
+
+.price-controls__label,
+.price-controls__input {
+  font-size: 14px;
+  font-family: var(--set-gilroy-font-family);
+  color: black;
+}
+
+.price-controls__label {
+  width: 90px;
+}
+
+.price-controls__input {
+  width: 50%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.price-controls__input:focus,
+.price-controls__input:hover {
+  background-color: white;
+}

@@ -1,0 +1,28 @@
+.product-characteristics__value {
+  padding: 0;
+  font-size: 36px;
+  line-height: 48px;
+  font-family: var(--set-gilroy-font-family);
+  letter-spacing: 0.36px;
+}
+
+.product-characteristics__value:nth-child(1) {
+  width: 159px;
+}
+
+.product-characteristics__value:nth-child(2) {
+  width: 139px;
+}
+
+.product-characteristics__name {
+  padding: 0;
+  padding-top: 7px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--bg-color-grey);
+  letter-spacing: 0.13px;
+}
+
+.product-characteristics__name:nth-child(3) {
+  padding-left: 3px;
+}

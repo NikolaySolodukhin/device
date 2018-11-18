@@ -1,0 +1,33 @@
+.catalog-menu {
+  position: absolute;
+  top: 176px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  min-height: 163px;
+  padding-top: 21px;
+  padding-bottom: 23px;
+  padding-left: 60px;
+  background-color: var(--bg-yellow-light);
+  visibility: hidden;
+}
+
+.catalog-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.catalog-menu__item {
+  padding-right: 59px;
+}
+
+.catalog-menu__link {
+  line-height: 36px;
+  letter-spacing: 0.15px;
+
+  &--active {
+    opacity: 0.6;
+  }
+}

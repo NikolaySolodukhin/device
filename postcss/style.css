@@ -1,19 +1,64 @@
-@import "../node_modules/normalize.css/normalize.css";
-@import "global/box-sizing.css";
-@import "global/fonts.css";
-@import "variables.css";
-@import "mixins.css";
+@import "../node_modules/normalize.css/normalize";
+@import "global/box-sizing";
+@import "global/fonts";
+@import "global/link";
+@import "variables";
 
 /*header*/
-@import "blocks/page.css";
-@import "blocks/container.css";
-@import "blocks/main-header.css";
-@import "blocks/search-form.css";
+@import "blocks/page";
+@import "blocks/container";
+@import "blocks/list-unstyled";
+@import "blocks/visually-hidden";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/menu-shop";
+@import "blocks/button";
+@import "blocks/search";
+@import "blocks/input";
+@import "blocks/nav-user";
+@import "blocks/nav-order";
+@import "blocks/nav-menu";
+@import "blocks/catalog-menu";
+
+/*main*/
+
+@import "blocks/main";
+@import "blocks/slider";
+@import "blocks/slide-navigation";
+@import "blocks/featured-product";
+@import "blocks/product-characteristics";
+@import "blocks/home-catalog";
+@import "blocks/home-services";
+@import "blocks/tabs";
+@import "blocks/features";
+@import "blocks/brands";
+@import "blocks/about-us";
+@import "blocks/transport-companies";
+@import "blocks/contacts";
+
+
+/*catalog.html*/
+
+@import "blocks/breadcrumbs";
+@import "blocks/filter";
+@import "blocks/range-controls";
+@import "blocks/fieldset";
+@import "blocks/checkbox";
+@import "blocks/radio";
+@import "blocks/price-control";
+@import "blocks/products.css";
+@import "blocks/sorting-products";
+@import "blocks/sorting-priority";
+@import "blocks/product";
+@import "blocks/links";
+@import "blocks/pagination";
 /*footer*/
-@import "blocks/social.css";
-@import "blocks/phone.css";
-@import "blocks/main-navigation.css";
-@import "blocks/contacts.css";
-@import "blocks/user-menu.css";
-@import "blocks/logo.css";
-@import "blocks/page-footer.css";
+
+@import "blocks/footer";
+@import "blocks/footer-nav";
+@import "blocks/social";
+@import "blocks/copyright";
+@import "blocks/map";
+@import "blocks/write-us";
+@import "blocks/modal";
+@import "blocks/form-field";

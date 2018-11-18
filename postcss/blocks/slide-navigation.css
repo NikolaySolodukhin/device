@@ -1,0 +1,38 @@
+.slide-navigation {
+  position: absolute;
+  top: 329px;
+  right: 62px;
+  z-index: 2;
+  display: flex;
+}
+
+.slide-navigation__item {
+  display: flex;
+}
+
+.slide-navigation__list {
+  display: flex;
+}
+
+.slide-navigation__label--active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border: 1px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide-navigation__label {
+  position: relative;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-right: 21px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}

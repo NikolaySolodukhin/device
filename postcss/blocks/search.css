@@ -1,0 +1,119 @@
+.search {
+  width: 440px;
+  margin-right: auto;
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+}
+
+.search__form::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M15.7 14.3l-3.104-3.104A6.979 6.979 0 0 0 14 7a7 7 0 1 0-7 7 6.963 6.963 0 0 0 4.193-1.404L14.3 15.7c.185.184.38.3.7.3a1 1 0 0 0 1-1 .93.93 0 0 0-.3-.7zM2 7c0-2.762 2.238-5 5-5s5 2.238 5 5-2.238 5-5 5-5-2.238-5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search__input {
+  width: 355px;
+  padding: 10px 40px 9px;
+  letter-spacing: 0.15px;
+  background-color: var(--bg-yellow-light);
+}
+
+.search__input::-webkit-input-placeholder {
+  color: var(--color-black-light);
+}
+
+.search__input:-ms-input-placeholder {
+  color: var(--color-black-light);
+}
+
+.search__input::-ms-input-placeholder {
+  color: var(--color-black-light);
+}
+
+.search__input::placeholder {
+  color: var(--color-black-light);
+}
+
+.search__input:hover::-webkit-input-placeholder {
+  color: var(--color-black-hover);
+}
+
+.search__input:hover:-ms-input-placeholder {
+  color: var(--color-black-hover);
+}
+
+.search__input:hover::-ms-input-placeholder {
+  color: var(--color-black-hover);
+}
+
+.search__input:hover::placeholder {
+  color: var(--color-black-hover);
+}
+
+.search__input:focus::-webkit-input-placeholder {
+  color: black;
+}
+
+.search__input:focus:-ms-input-placeholder {
+  color: black;
+}
+
+.search__input:focus::-ms-input-placeholder {
+  color: black;
+}
+
+.search__input:focus::placeholder {
+  color: black;
+}
+
+.search__button {
+  width: 85px;
+  min-height: 49px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: var(--set-opensans-font-family);
+  text-transform: none;
+  letter-spacing: 0.15px;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px black;
+  visibility: hidden;
+}
+
+.search__button:hover,
+.search__button:focus {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.search__form:focus-within .search__input,
+.search__input:focus {
+  box-shadow: inset 0 -2px 0 0 black;
+}
+
+.search__input:focus {
+  box-shadow: inset 0 -2px 0 0 black;
+}
+
+.search__form:focus-within .search__button,
+.search__input:focus + .search__button {
+  visibility: visible;
+}
+
+.search__input:focus + .search__button {
+  visibility: visible;
+}
+
+.search__button:active {
+  color: rgba(255, 255, 255, 0.3);
+}
