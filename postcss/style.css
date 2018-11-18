@@ -40,7 +40,6 @@
 /*catalog.html*/
 
 @import "blocks/breadcrumbs";
-@import "blocks/products--shadow";
 @import "blocks/filter";
 @import "blocks/range-controls";
 @import "blocks/fieldset";
